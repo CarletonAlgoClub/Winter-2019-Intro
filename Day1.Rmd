@@ -8,3 +8,24 @@ output: github_document
 library(tidyverse)
 cancer <- read_csv("breast-cancer-wisconsin.csv", col_names = c("id","clump_Thickness","unif_Size","unif_Shape","marginal_Adhesion","epith_Size","bare_Nuclei","bland_Chromatin","normal_Nucleoli","mitoses","class"))
 ```
+
+Visualization
+
+```{r}
+cancer <- cancer %>%
+  mutate(class = as.factor(class))
+
+cancer %>%
+  ggplot(aes(epith_Size)) + 
+  geom_bar()
+
+cancer %>% 
+  ggplot(aes(unif_Size, unif_Shape)) +
+  geom_jitter() + 
+  geom_smooth(method = 'lm')
+
+cancer %>% 
+  ggplot(aes(unif_Size, unif_Shape)) +
+  geom_point(alpha=0.1)
+```
+
