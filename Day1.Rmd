@@ -1,0 +1,10 @@
+---
+title: "Day 1"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+cancer <- read_csv("breast-cancer-wisconsin.csv", col_names = c("id","clump_Thickness","unif_Size","unif_Shape","marginal_Adhesion","epith_Size","bare_Nuclei","bland_Chromatin","normal_Nucleoli","mitoses","class"))
+```
