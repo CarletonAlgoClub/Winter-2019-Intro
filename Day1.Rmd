@@ -36,4 +36,16 @@ cancer %>%
 
 
 ```
+```{r}
+cancer.glm1<-glm(class~id+clump_Thickness+unif_Size+unif_Shape+marginal_Adhesion+epith_Size+bare_Nuclei+bland_Chromatin+normal_Nucleoli+mitoses,family="binomial",data=cancer)
+print(cancer.lm1)
+```
+```{r}
+summary(cancer.glm1)
+anova(cancer.glm1)
+```
+
+```{r}
+plot(cancer.glm1$fitted.values,cancer.glm1$residuals)
+```
 
